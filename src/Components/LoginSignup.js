@@ -19,13 +19,13 @@ const LoginSignup = (props) => {
   const register=  {userName:user.UserName, Password:password.Password, email:email.email, phone:phone.phone, cpassword:cpassword.cpassword}
   const handleLogin = (e) => {
     // fetching the url
-    fetch("https://5f4bdb2dea007b0016b1dc8b.mockapi.io/login",{
-      method:"GET",
+    fetch("http://gamepitara.globaldigitaz.com/api/login",{
+      method:"Post",
       headers:{
         "Content-type":"application/json",
         "Accept":"application/json"
       },
-      // body:JSON.stringify(users)
+       body:JSON.stringify(users)
     }).then((result)=>{
       result.json().then((res)=>{
         res.map(persons =>{
